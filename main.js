@@ -25,6 +25,15 @@ const playGame = () => {
         const computerChoice = getComputerChoice();
         const result = determineWiner(playerChoice, computerChoice);
         displayResult(result);
-        
+        if (askToPlayAgain()) {
+            continue;
+        } else {
+            thanksForPlaying();
+        }
+
     }
+}
+
+const getPlayerChoice = () =>{
+    return prompt ("please enter rock, paper, or scissors.");
 }
