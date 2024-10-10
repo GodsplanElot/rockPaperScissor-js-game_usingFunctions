@@ -8,5 +8,23 @@ const initGame = () => {
 const playGame = () => {
     while (true) {
         let playerChoice = getPlayerChoice();
+        playerChoice = formatPlayerChoice(playerChoice);
+        if (playerChoice === "") {
+            invalidChoice();
+            continue;
+        }
+        if (!playerChoice) {
+            decidedNotToPlay();
+            break;
+        }
+        playerChoice = evaluatePlayerChioce(playerChoice);
+        if (!playerChoice) {
+            invalidChoice();
+            continue;
+        }
+        const computerChoice = getComputerChoice();
+        const result = determineWiner(playerChoice, computerChoice);
+        displayResult(result);
+        
     }
 }
