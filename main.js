@@ -54,7 +54,7 @@ const evaluatePlayerChioce = (playerChoice) => {
     if (
         playerChoice === "rock" ||
         playerChoice === "paper" ||
-        playerChoice === "scissors" ||
+        playerChoice === "scissors"
     ) {
         return playerChoice;
     } else {
